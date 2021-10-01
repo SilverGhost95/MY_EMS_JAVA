@@ -21,6 +21,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.Cursor;
+import javax.swing.UIManager;
+import java.awt.event.MouseAdapter;
 
 public class splash_Login {
 
@@ -84,19 +86,29 @@ public class splash_Login {
 		panelLogin.setLayout(null);
 		
 		
-		JSeparator separator = new JSeparator();
-		separator.setBounds(101, 177, 290, 10);
-		panelLogin.add(separator);
+		JSeparator sptrUsername = new JSeparator();
+		sptrUsername.setBounds(101, 177, 290, 10);
+		panelLogin.add(sptrUsername);
 		
-		JSeparator separator_1 = new JSeparator();
-		separator_1.setForeground(Color.LIGHT_GRAY);
-		separator_1.setBackground(Color.WHITE);
-		separator_1.setBounds(101, 258, 290, 10);
-		panelLogin.add(separator_1);
+		JSeparator sptrPassword = new JSeparator();
+		sptrPassword.setForeground(Color.LIGHT_GRAY);
+		sptrPassword.setBackground(Color.WHITE);
+		sptrPassword.setBounds(101, 258, 290, 10);
+		panelLogin.add(sptrPassword);
 		
 
 		
 		txtUsername = new JTextField();
+		txtUsername.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				sptrUsername.setForeground(new Color(244, 180, 26));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				sptrUsername.setBackground(Color.WHITE);
+			}
+		});
 		txtUsername.setBorder(null);
 		txtUsername.setFont(new Font("SansSerif", Font.PLAIN, 18));
 		txtUsername.setText("Username");
@@ -107,6 +119,17 @@ public class splash_Login {
 		txtUsername.setColumns(10);
 		
 		pwdPassword = new JPasswordField();
+		pwdPassword.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
+		pwdPassword.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				sptrPassword.setForeground(new Color(244, 180, 26));
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				sptrPassword.setBackground(Color.WHITE);
+			}
+		});
 		pwdPassword.setBorder(null);
 		pwdPassword.setFont(new Font("SansSerif", Font.PLAIN, 18));
 		pwdPassword.setForeground(new Color(255, 255, 255));
@@ -116,6 +139,16 @@ public class splash_Login {
 		panelLogin.add(pwdPassword);
 		
 		Button btnSignIn = new Button("Sign In");
+		btnSignIn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnSignIn.setForeground(new Color(244, 180, 26));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnSignIn.setForeground(Color.WHITE);
+			}
+		});
 		btnSignIn.setName("btn_SignIn");
 		btnSignIn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnSignIn.setFont(new Font("SansSerif", Font.PLAIN, 18));
@@ -126,6 +159,16 @@ public class splash_Login {
 		panelLogin.add(btnSignIn);
 		
 		Button btnRegister = new Button("Register");
+		btnRegister.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnRegister.setForeground(new Color(244, 180, 26));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnRegister.setForeground(Color.WHITE);
+			}
+		});
 		btnRegister.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnRegister.setFont(new Font("SansSerif", Font.PLAIN, 18));
 		btnRegister.setForeground(new Color(255, 255, 255));
@@ -134,6 +177,17 @@ public class splash_Login {
 		panelLogin.add(btnRegister);
 		
 		JLabel lblForgotPass = new JLabel("Forgot Password?");
+		lblForgotPass.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblForgotPass.setForeground(new Color(244, 180, 26));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblForgotPass.setForeground(Color.WHITE);
+			}
+		});
+		lblForgotPass.setBorder(null);
 		lblForgotPass.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		lblForgotPass.setFont(new Font("SansSerif", Font.BOLD, 14));
 		lblForgotPass.setForeground(Color.WHITE);
@@ -156,7 +210,7 @@ public class splash_Login {
 	
 	//Allows icons to fit into label sizes
 	private ImageIcon scaleIcon(JLabel label, ImageIcon icon) {
-
+		
 		Image img = icon.getImage();
 		Image imgScaled = img.getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
 		ImageIcon iconScaled = new ImageIcon(imgScaled);

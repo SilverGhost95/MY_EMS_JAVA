@@ -16,6 +16,11 @@ import javax.swing.JButton;
 import javax.swing.JTextPane;
 import javax.swing.JToolBar.Separator;
 import javax.swing.JSeparator;
+import java.awt.event.MouseMotionAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.Cursor;
 
 public class splash_Login {
 
@@ -84,9 +89,9 @@ public class splash_Login {
 		panelLogin.add(separator);
 		
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setForeground(Color.WHITE);
+		separator_1.setForeground(Color.LIGHT_GRAY);
 		separator_1.setBackground(Color.WHITE);
-		separator_1.setBounds(101, 258, 290, 40);
+		separator_1.setBounds(101, 258, 290, 10);
 		panelLogin.add(separator_1);
 		
 
@@ -110,42 +115,46 @@ public class splash_Login {
 		pwdPassword.setBounds(101, 220, 290, 39);
 		panelLogin.add(pwdPassword);
 		
-		Button btnNewButton = new Button("Sign In");
-		btnNewButton.setFont(new Font("SansSerif", Font.PLAIN, 18));
-		btnNewButton.setForeground(Color.WHITE);
-		btnNewButton.setBackground(new Color(20, 61, 89));
+		Button btnSignIn = new Button("Sign In");
+		btnSignIn.setName("btn_SignIn");
+		btnSignIn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnSignIn.setFont(new Font("SansSerif", Font.PLAIN, 18));
+		btnSignIn.setForeground(Color.WHITE);
+		btnSignIn.setBackground(new Color(20, 61, 89));
 		//btnNewButton.setBorder(BorderFactory.createEmptyBorder());
-		btnNewButton.setBounds(101, 300, 123, 40);
-		panelLogin.add(btnNewButton);
+		btnSignIn.setBounds(101, 300, 123, 40);
+		panelLogin.add(btnSignIn);
 		
 		Button btnRegister = new Button("Register");
+		btnRegister.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnRegister.setFont(new Font("SansSerif", Font.PLAIN, 18));
 		btnRegister.setForeground(new Color(255, 255, 255));
 		btnRegister.setBackground(new Color(20, 61, 89));
 		btnRegister.setBounds(268, 300, 123, 40);
 		panelLogin.add(btnRegister);
 		
-		JLabel lblNewLabel = new JLabel("Forgot Password?");
-		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 14));
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(179, 390, 135, 26);
-		panelLogin.add(lblNewLabel);
+		JLabel lblForgotPass = new JLabel("Forgot Password?");
+		lblForgotPass.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		lblForgotPass.setFont(new Font("SansSerif", Font.BOLD, 14));
+		lblForgotPass.setForeground(Color.WHITE);
+		lblForgotPass.setBounds(179, 390, 135, 26);
+		panelLogin.add(lblForgotPass);
 		
 		JLabel lblUsername = new JLabel("");
-		lblUsername.setBounds(67, 144, 30, 30);
+		lblUsername.setBounds(65, 144, 30, 30);
 		panelLogin.add(lblUsername);
 		ImageIcon iconUser = new ImageIcon("C:\\Users\\ricog\\git\\MY_EMS_JAVA\\MY_EMS\\icons\\account.png");
 		lblUsername.setIcon(scaleIcon(lblUsername, iconUser));
 		
 		JLabel lblPassword = new JLabel("");
-		lblPassword.setBounds(67, 224, 30, 30);
+		lblPassword.setBounds(65, 224, 30, 30);
 		panelLogin.add(lblPassword);
 		ImageIcon iconPassword = new ImageIcon("C:\\Users\\ricog\\git\\MY_EMS_JAVA\\MY_EMS\\icons\\lock.png");
 		lblPassword.setIcon(scaleIcon(lblPassword,iconPassword));
 
 	}
 	
-	
+	//Allows icons to fit into label sizes
 	private ImageIcon scaleIcon(JLabel label, ImageIcon icon) {
 
 		Image img = icon.getImage();

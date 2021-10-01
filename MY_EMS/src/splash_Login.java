@@ -7,10 +7,15 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import java.awt.Font;
 
 public class splash_Login {
 
 	private JFrame frame;
+	private JTextField txtUsername;
+	private JPasswordField pwdPassword;
 
 	/**
 	 * Launch the application.
@@ -69,5 +74,22 @@ public class splash_Login {
 		panelLogin.setBounds(455, 0, 458, 500);
 		frame.getContentPane().add(panelLogin);
 		panelLogin.setLayout(null);
+		
+		txtUsername = new JTextField();
+		txtUsername.setFont(new Font("SansSerif", Font.PLAIN, 18));
+		txtUsername.setText("Username");
+		txtUsername.setForeground(new Color(255, 255, 255));
+		txtUsername.setBackground(new Color(20, 61, 89));
+		txtUsername.setBounds(101, 134, 290, 40);
+		panelLogin.add(txtUsername);
+		txtUsername.setColumns(10);
+		
+		pwdPassword = new JPasswordField();
+		pwdPassword.setFont(new Font("SansSerif", Font.PLAIN, 12));
+		pwdPassword.setForeground(new Color(255, 255, 255));
+		pwdPassword.setText("Password");
+		pwdPassword.setBackground(new Color(20, 61, 89));
+		pwdPassword.setBounds(101, 200, 290, 40);
+		panelLogin.add(pwdPassword);
 	}
 }

@@ -81,7 +81,7 @@ public class splash_Login {
 		
 		JPanel panelLogin = new JPanel();
 		panelLogin.setBackground(new Color(20, 61, 89));
-		panelLogin.setBounds(455, 0, 458, 500);
+		panelLogin.setBounds(455, 0, 445, 500);
 		frame.getContentPane().add(panelLogin);
 		panelLogin.setLayout(null);
 		
@@ -186,6 +186,12 @@ public class splash_Login {
 		panelLogin.add(lblPassword);
 		ImageIcon iconPassword = new ImageIcon("C:\\Users\\ricog\\git\\MY_EMS_JAVA\\MY_EMS\\icons\\lock.png");
 		lblPassword.setIcon(scaleIcon(lblPassword,iconPassword));
+		
+		JLabel lblExit = new JLabel("");
+		lblExit.setBounds(405, 11, 30, 26);
+		panelLogin.add(lblExit);
+		ImageIcon iconExit = new ImageIcon("C:\\Users\\ricog\\git\\MY_EMS_JAVA\\MY_EMS\\icons\\exit.png");
+		lblExit.setIcon(scaleIcon(lblExit,iconExit));
 
 	}
 	
@@ -197,6 +203,4 @@ public class splash_Login {
 		ImageIcon iconScaled = new ImageIcon(imgScaled);
 		return iconScaled;
 	}
-
-
 }

@@ -188,7 +188,21 @@ public class splash_Login {
 		lblPassword.setIcon(scaleIcon(lblPassword,iconPassword));
 		
 		JLabel lblExit = new JLabel("");
-		lblExit.setBounds(405, 11, 30, 26);
+		lblExit.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblExit.setBorder(new LineBorder(Color.WHITE, 1, true));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblExit.setBorder(null);
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				 frame.dispose();
+			}
+		});
+		lblExit.setBounds(394, 23, 30, 26);
 		panelLogin.add(lblExit);
 		ImageIcon iconExit = new ImageIcon("C:\\Users\\ricog\\git\\MY_EMS_JAVA\\MY_EMS\\icons\\exit.png");
 		lblExit.setIcon(scaleIcon(lblExit,iconExit));

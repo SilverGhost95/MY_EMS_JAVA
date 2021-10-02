@@ -99,17 +99,8 @@ public class splash_Login {
 
 		
 		txtUsername = new JTextField();
-		txtUsername.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				sptrUsername.setForeground(new Color(244, 180, 26));
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-				sptrUsername.setBackground(Color.WHITE);
-			}
-		});
 		txtUsername.setBorder(null);
+		txtUsername.setCaretColor(Color.WHITE);
 		txtUsername.setFont(new Font("SansSerif", Font.PLAIN, 18));
 		txtUsername.setText("Username");
 		txtUsername.setForeground(new Color(255, 255, 255));
@@ -119,18 +110,8 @@ public class splash_Login {
 		txtUsername.setColumns(10);
 		
 		pwdPassword = new JPasswordField();
-		pwdPassword.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
-		pwdPassword.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusGained(FocusEvent e) {
-				sptrPassword.setForeground(new Color(244, 180, 26));
-			}
-			@Override
-			public void focusLost(FocusEvent e) {
-				sptrPassword.setBackground(Color.WHITE);
-			}
-		});
 		pwdPassword.setBorder(null);
+		pwdPassword.setCaretColor(Color.WHITE);
 		pwdPassword.setFont(new Font("SansSerif", Font.PLAIN, 18));
 		pwdPassword.setForeground(new Color(255, 255, 255));
 		pwdPassword.setText("Password");

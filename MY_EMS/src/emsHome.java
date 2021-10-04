@@ -35,7 +35,7 @@ public class emsHome {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setUndecorated(true);
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 1136, 700);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
